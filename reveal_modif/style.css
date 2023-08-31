@@ -1,4 +1,15 @@
-.top-logo {
-  display: block;
+button {
   width: 80px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  background-color: white;
+  color: black;
 }

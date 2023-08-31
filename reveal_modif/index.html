@@ -5,18 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dist/reveal.css">
   <link rel="stylesheet" href="dist/theme/black.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
   <link rel="stylesheet" href="style.css">
   <title>RevealJS</title>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
-      <img
-        src="https://www.itroom.fr/wp-content/uploads/2021/06/logo.png"
-        alt="Logo ITRoom"
-        class="top-logo"
-      />
-
       <!-- Slide 1 -->
       <section>
         <img src="img/logo.svg" alt="Logo RevealJS" />
@@ -25,34 +20,124 @@
 
       <!-- Slide 2 -->
       <section>
-        <h4>Comment l'installer ?</h4>
+        <h3>Comment l'installer ?</h3>
         <a href="https://revealjs.com/installation/" target="_blank">Doc d'installation</a>
       </section>
 
       <!-- Slide 3 -->
       <section>
         <section>
-          <h4>A quoi ça sert ?</h4>
+          <h3>Les slides verticaux</h3>
         </section>
+        <section>1.1</section>
+        <section>1.2</section>
         <section>
-          <ul>
-            <li>Créer une présentation facilement</li>
-            <li class="fragment">A partir d'HTML</li>
-            <li class="fragment">Avec la possibilité d'ajouter du CSS et du JS</li>
-          </ul>
+<pre><code><section>
+  <section>Les slides verticaux</section>
+  <section>1.1</section>
+  <section>1.2</section>
+</section>
+</code></pre>
         </section>
       </section>
 
       <!-- Slide 4 -->
       <section>
-        <h4>Test</h4>
+        <section data-background-color="#2aaee7">
+          <h3>Le background</h3>
+        </section>
+        <section data-background-gradient="radial-gradient(#283b95, #17b2c3)">
+          <p>En gradient</p>
+        </section>
+        <section data-background-image="img/background.jpg"></section>
+        <section>
+          <pre><code><section>
+  <section data-background-color="#2aaee7">
+    <h4>Le background</h4>
+  </section>
+  <section data-background-gradient="radial-gradient(#283b95, #17b2c3)">
+    <p>En gradient</p>
+  </section>
+  <section data-background-image="img/background.jpg"></section>
+</section>
+          </code></pre>
+        </section>
+      </section>
+
+      <!-- Slide 5 -->
+      <section>
+        <section>
+          <h3>La personnalisation</h3>
+          <p>Comme RevealJS utilise du HTML classique, vous pouvez y ajouter votre propre CSS ou JS par exemple.</p>
+        </section>
+        <section>
+          <button>+1</button>
+          <p>Compteur: <span class="counter">0</span></p>
+        </section>
+      </section>
+
+      <!-- Slide 6 -->
+      <section>
+        <section>
+          <h3>Les fragments</h3>
+          <p class="fragment fade-down">Permet d'afficher au fur et à mesure les différentes parties</p>
+        </section>
+        <section>
+          <p>Qui est le plus jeune employé de la boîte ?</p>
+          <ol>
+            <li class="fragment" data-fragment-index="1">Val</li>
+            <li class="fragment" data-fragment-index="2">Alex</li>
+            <li class="fragment fade-in" data-fragment-index="3">
+              <span class="fragment highlight-green" data-fragment-index="5">Moi
+                <span class="fragment" data-fragment-index="5">🥳</span>
+              </span>
+            </li>
+            <li class="fragment" data-fragment-index="4">Tim</li>
+          </ol>
+        </section>
+        <section>
+          <pre><code data-line-numbers="4-12"><section>
+  <p>Qui est le plus jeune employé de la boîte ?</p>
+  <ol>
+    <li class="fragment" data-fragment-index="1">Val</li>
+    <li class="fragment" data-fragment-index="2">Alex</li>
+    <li class="fragment fade-in" data-fragment-index="3">
+      <span class="fragment highlight-green" data-fragment-index="5">
+        Moi
+        <span class="fragment" data-fragment-index="5">🥳</span>
+      </span>
+    </li>
+    <li class="fragment" data-fragment-index="4">Tim</li>
+  </ol>
+</section>
+</code></pre>
+        </section>
+      </section>
+
+      <!-- Slide 7 -->
+      <section>
+        <section>
+          <h3>Afficher du code</h3>
+          <!-- FIXME: -->
+          <p>https://component-party.dev/</p>
+        </section>
       </section>
     </div>
   </div>
   
   <script src="dist/reveal.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
   <script>
-    Reveal.initialize({});
+    Reveal.initialize({
+      plugins: [ RevealHighlight ]
+    });
+  </script>
+  <script>
+    const btn = document.querySelector('button');
+    const counter = document.querySelector('.counter');
+    btn.addEventListener('click', () => {
+      counter.textContent = 1 + parseInt(counter.textContent);
+    })
   </script>
 </body>
 </html>
