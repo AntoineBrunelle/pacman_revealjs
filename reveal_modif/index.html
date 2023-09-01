@@ -16,12 +16,21 @@
       <section>
         <img src="img/logo.svg" alt="Logo RevealJS" />
         <p>Outil de présentation</p>
+
+        <aside class="notes">
+          Framework HTML de présentation comme Google slides
+        </aside>
       </section>
 
       <!-- Slide 2 -->
       <section>
         <h3>Comment l'installer ?</h3>
         <a href="https://revealjs.com/installation/" target="_blank">Doc d'installation</a>
+
+        <aside class="notes">
+          - Comparer la version originale et modif
+          - Ne pas oublier les imports CSS et JS
+        </aside>
       </section>
 
       <!-- Slide 3 -->
@@ -61,6 +70,10 @@
   <section data-background-image="img/background.jpg"></section>
 </section>
           </code></pre>
+
+          <aside class="notes">
+            On peut également mettre des vidéos ou des iframes par exemple
+          </aside>
         </section>
       </section>
 
@@ -68,7 +81,7 @@
       <section>
         <section>
           <h3>La personnalisation</h3>
-          <p>Comme RevealJS utilise du HTML classique, vous pouvez y ajouter votre propre CSS ou JS par exemple.</p>
+          <p>Comme <u>RevealJS</u> utilise une structure HTML classique, vous pouvez y ajouter votre propre <b>CSS</b> ou <i>JS</i> par exemple.</p>
         </section>
         <section>
           <button>+1</button>
@@ -118,18 +131,54 @@
       <section>
         <section>
           <h3>Afficher du code</h3>
-          <!-- FIXME: -->
-          <p>https://component-party.dev/</p>
+          <p>Grâce aux balises <b>pre</b> et <b>code</b></p>
+<pre><code>const test = document.querySelector('.test');
+test.addEventListener('clic', () => {
+  console.log('Le test fonctionne');
+})
+</code></pre>
         </section>
+        <section>
+          <p>Vous pouvez même afficher ligne par ligne</p>
+<pre><code data-line-numbers="4-5|8-9"><table>
+  <tbody>
+    <tr>
+      <td>Pommes</td>
+      <td>10€</td>
+    </tr>
+    <tr>
+      <td>Fraises</td>
+      <td>15€</td>
+    </tr>
+  </tbody>
+</table>
+</code></pre>
+        </section>
+      </section>
+
+      <!-- Slide 8 -->
+      <section>
+        <section>
+          <h4>Mode présentation</h4>
+          <aside class="notes">
+            Mes notes persos qu'il faut pas que vous lisiez
+          </aside>
+        </section>
+      </section>
+
+      <!-- Slide 9 -->
+      <section data-visibility="uncounted">
+        <a href="https://component-party.dev/" target="_blank">Petit bonus</a>
       </section>
     </div>
   </div>
   
   <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
   <script>
     Reveal.initialize({
-      plugins: [ RevealHighlight ]
+      plugins: [ RevealHighlight, RevealNotes ]
     });
   </script>
   <script>
